@@ -1,0 +1,13 @@
+{ "variants": {
+  "facing=down,open=false": { "model": "goldenfisher:block/golden_barrel", "x": 180 },
+  "facing=down,open=true":  { "model": "goldenfisher:block/golden_barrel", "x": 180 },
+  "facing=east,open=false": { "model": "goldenfisher:block/golden_barrel", "x": 90, "y": 90 },
+  "facing=east,open=true":  { "model": "goldenfisher:block/golden_barrel", "x": 90, "y": 90 },
+  "facing=north,open=false":{ "model": "goldenfisher:block/golden_barrel", "x": 90 },
+  "facing=north,open=true": { "model": "goldenfisher:block/golden_barrel", "x": 90 },
+  "facing=south,open=false":{ "model": "goldenfisher:block/golden_barrel", "x": 90, "y": 180 },
+  "facing=south,open=true": { "model": "goldenfisher:block/golden_barrel", "x": 90, "y": 180 },
+  "facing=up,open=false":   { "model": "goldenfisher:block/golden_barrel" },
+  "facing=up,open=true":    { "model": "goldenfisher:block/golden_barrel" },
+  "facing=west,open=false": { "model": "goldenfisher:block/golden_barrel", "x": 90, "y": 270 },
+  "facing=west,open=true":  { "model": "goldenfisher:block/golden_barrel", "x": 90, "y": 270 } } }
