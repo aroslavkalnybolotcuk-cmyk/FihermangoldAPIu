@@ -29,7 +29,7 @@ public class ModProfessions {
                 holder -> holder.is(POI_KEY), holder -> holder.is(POI_KEY),
                 ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_FISHERMAN,
                 new it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap<>()));
-
+    }
     public static boolean is(net.minecraft.world.entity.npc.villager.Villager v) {
         return v.getVillagerData().profession().value() == GOLDEN_FISHERMAN;
     }
