@@ -30,6 +30,6 @@ public class ModBlocks {
                 .setId(ResourceKey.create(Registries.ITEM, id)).useBlockDescriptionPrefix()));
 
         // Разрешаем ванильному BlockEntity бочки жить в нашем блоке (Fabric API)
-        BlockEntityType.BARREL.addSupportedBlock(GOLDEN_BARREL);
+        BuiltInRegistries.BLOCK_ENTITY_TYPE.getValue(Identifier.withDefaultNamespace("barrel")).addSupportedBlock(GOLDEN_BARREL);
     }
 }
