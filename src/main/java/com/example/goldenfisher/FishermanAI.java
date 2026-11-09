@@ -7,7 +7,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
-import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -39,8 +40,7 @@ public class FishermanAI {
 
     public static void tickWorld(ServerLevel level) {
         if (level.getGameTime() % 5 != 0) return; // не каждый тик - экономим TPS
-        for (Villager v : level.getEntities(EntityType.VILLAGER, ModProfessions::is)) tick(level, v);
-    }
+        for (Villager v : level.getEntities(EntityTypeTest.forClass(Villager.class), ModProfessions::is)) tick(level, v);
 
     private static void tick(ServerLevel level, Villager v) {
         if (v.getInventory().getItem(RodInteraction.ROD_SLOT).isEmpty()) { DATA.remove(v.getUUID()); return; }
