@@ -18,8 +18,7 @@ public class ModProfessions {
 
     public static void register() {
         // POI = блок, который житель "занимает" (наша бочка)
-        PoiType poi = Registry.register(BuiltInRegistries.POINT_OF_INTEREST_TYPE, ID,
-            new PoiType(ImmutableSet.copyOf(ModBlocks.GOLDEN_BARREL.getStateDefinition().getPossibleStates()), 1, 1));
+                net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper.register(ID, 1, 1, ModBlocks.GOLDEN_BARREL);
 
         // Профессия без торговли: список обменов не задаём, ничего не продаётся.
         // Текстура (золотая шляпа): assets/goldenfisher/textures/entity/villager/profession/golden_fisherman.png
