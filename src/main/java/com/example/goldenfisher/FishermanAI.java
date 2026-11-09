@@ -63,7 +63,6 @@ public class FishermanAI {
                 v.getNavigation().stop();
                 v.getLookControl().setLookAt(Vec3.atCenterOf(d.water.below()));
                 d.timer -= 5;
-                if (d.timer % 40 == 0) v.swing(InteractionHand.MAIN_HAND);
                 if (d.timer <= 0) {
                     v.getInventory().setItem(RodInteraction.CATCH_SLOT, roll(v));
                     d.state = State.GO_TO_BARREL;
