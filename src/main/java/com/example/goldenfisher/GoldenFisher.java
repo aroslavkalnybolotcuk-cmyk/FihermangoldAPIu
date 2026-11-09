@@ -13,6 +13,6 @@ public class GoldenFisher implements ModInitializer {
         ModBlocks.register();          // золотая бочка
         ModProfessions.register();     // профессия
         UseEntityCallback.EVENT.register(RodInteraction::onUse);   // вставка удочки ПКМ
-        ServerTickEvents.END_WORLD_TICK.register(FishermanAI::tickWorld); // поведение
+        ServerTickEvents.END_LEVEL_TICK.register(FishermanAI::tickWorld); // поведение
     }
 }
