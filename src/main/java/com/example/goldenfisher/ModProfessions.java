@@ -8,7 +8,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
-import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
 
 public class ModProfessions {
     public static final Identifier ID =
@@ -30,7 +30,7 @@ public class ModProfessions {
                 ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_FISHERMAN));
     }
 
-    public static boolean is(net.minecraft.world.entity.npc.Villager v) {
+    public static boolean is(net.minecraft.world.entity.npc.villager.Villager v) {
         return v.getVillagerData().profession().value() == GOLDEN_FISHERMAN;
     }
 }
