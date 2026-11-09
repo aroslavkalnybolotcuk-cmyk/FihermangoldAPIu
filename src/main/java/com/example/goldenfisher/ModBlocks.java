@@ -30,6 +30,21 @@ public class ModBlocks {
                 .setId(ResourceKey.create(Registries.ITEM, id)).useBlockDescriptionPrefix()));
 
         // Разрешаем ванильному BlockEntity бочки жить в нашем блоке (Fabric API)
-        BuiltInRegistries.BLOCK_ENTITY_TYPE.getValue(Identifier.withDefaultNamespace("barrel")).addSupportedBlock(GOLDEN_BARREL);
+                BlockEntityType<?> barrelType = BuiltInRegistries.BLOCK_ENTITY_TYPE.getValue(Identifier.withDefaultNamespace("barrel"));
+        try {
+            for (java.lang.reflect.Field f : BlockEntityType.class.getDeclaredFields()) {
+                if (java.util.Set.class.isAssignableFrom(f.getType()) && !java.lang.reflect.Modifier.isStatic(f.getModifiers())) {
+                    f.setAccessible(true);
+                    @SuppressWarnings("unchecked")
+                    java.util.Set<Block> old = (java.util.Set<Block>) f.get(barrelType);
+                    java.util.Set<Block> merged = new java.util.HashSet<>(old);
+                    merged.add(GOLDEN_BARREL);
+                    f.set(barrelType, merged);
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Golden barrel: failed to register block entity", e);
+        }
     }
 }
