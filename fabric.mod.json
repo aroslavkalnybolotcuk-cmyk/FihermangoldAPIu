@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "goldenfisher",
+  "version": "${version}",
+  "name": "Golden Fisherman",
+  "description": "Villager profession: fisherman with a golden barrel.",
+  "environment": "*",
+  "entrypoints": { "main": ["com.example.goldenfisher.GoldenFisher"] },
+  "depends": { "fabricloader": "*", "minecraft": "*", "fabric-api": "*" }
+}

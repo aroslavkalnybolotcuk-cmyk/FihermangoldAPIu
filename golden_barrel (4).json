@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["GGG", "GBG", "GGG"],
+  "key": { "G": "minecraft:gold_ingot", "B": "minecraft:barrel" },
+  "result": { "id": "goldenfisher:golden_barrel", "count": 1 }
+}
