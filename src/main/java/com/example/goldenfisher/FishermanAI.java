@@ -41,6 +41,7 @@ public class FishermanAI {
     public static void tickWorld(ServerLevel level) {
         if (level.getGameTime() % 5 != 0) return; // не каждый тик - экономим TPS
         for (Villager v : level.getEntities(EntityTypeTest.forClass(Villager.class), ModProfessions::is)) tick(level, v);
+        }
 
     private static void tick(ServerLevel level, Villager v) {
         if (v.getInventory().getItem(RodInteraction.ROD_SLOT).isEmpty()) { DATA.remove(v.getUUID()); return; }
